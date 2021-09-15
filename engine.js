@@ -48,6 +48,7 @@ async function playIteration(matchDetails) {
   matchDetails = ballMovement.moveBall(matchDetails)
   playerMovement.closestPlayerToBall(closestPlayerA, kickOffTeam, matchDetails)
   playerMovement.closestPlayerToBall(closestPlayerB, secondTeam, matchDetails)
+  setPositions.setIntentPosition(matchDetails)
   kickOffTeam = playerMovement.decideMovement(closestPlayerA, kickOffTeam, secondTeam, matchDetails)
   secondTeam = playerMovement.decideMovement(closestPlayerB, secondTeam, kickOffTeam, matchDetails)
   matchDetails.kickOffTeam = kickOffTeam
